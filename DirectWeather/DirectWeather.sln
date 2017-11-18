@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectWeather.WebAPI", "DirectWeather.WebAPI\DirectWeather.WebAPI.csproj", "{29603338-DF71-4A25-9DE2-90CBD23EA372}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectWeather.FrontEnd", "DirectWeather.FrontEnd\DirectWeather.FrontEnd.csproj", "{98878BD1-371A-4199-A1F9-0B524ADDFABD}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectWeather.WebAPI.Tests", "DirectWeather.WebAPI.Tests\DirectWeather.WebAPI.Tests.csproj", "{C629868E-1071-4F35-A748-10F6610B75D0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectWeather.FrontEnd.Tests", "DirectWeather.FrontEnd.Tests\DirectWeather.FrontEnd.Tests.csproj", "{A3116F0F-8D2C-4743-A710-0D27C668AC31}"
@@ -27,10 +25,6 @@ Global
 		{29603338-DF71-4A25-9DE2-90CBD23EA372}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29603338-DF71-4A25-9DE2-90CBD23EA372}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29603338-DF71-4A25-9DE2-90CBD23EA372}.Release|Any CPU.Build.0 = Release|Any CPU
-		{98878BD1-371A-4199-A1F9-0B524ADDFABD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{98878BD1-371A-4199-A1F9-0B524ADDFABD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{98878BD1-371A-4199-A1F9-0B524ADDFABD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{98878BD1-371A-4199-A1F9-0B524ADDFABD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C629868E-1071-4F35-A748-10F6610B75D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C629868E-1071-4F35-A748-10F6610B75D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C629868E-1071-4F35-A748-10F6610B75D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
