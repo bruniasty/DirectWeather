@@ -27,7 +27,8 @@ export class Weather {
 export enum WeatherOutputState {
     NotVisible,
     Visible,
-    InError
+    InError,
+    Searching
 }
 
 
@@ -55,7 +56,7 @@ export class Home extends React.Component<RouteComponentProps<{}>, SearchDataSta
     }
 
     searchCommand(country: string, city: string) {
-        this.setState({ outputState: WeatherOutputState.NotVisible });
+        this.setState({ outputState: WeatherOutputState.Searching });
         this.setState({ weather: new Weather() });
 
         fetch("http://localhost:5268/api/Weather/" + country + "/" + city)
@@ -67,7 +68,7 @@ export class Home extends React.Component<RouteComponentProps<{}>, SearchDataSta
                     throw new Error("City or country not found. Please try again.");
                 
                 if (response.status === 404)
-                    throw new Error("Please fill city and country fields. If error keep displays, check the website http://localhost:5268 is online.");
+                    throw new Error("Please fill city and country fields. If the error keep displaying, check if the website http://localhost:5268 is online.");
                 
                 throw new Error(response.statusText);
             })
@@ -86,7 +87,7 @@ export class Home extends React.Component<RouteComponentProps<{}>, SearchDataSta
             <form onSubmit={this.handleSubmit}>
                 <input placeholder="Country:" type="text" value={this.state.country} name="country" onChange={this.setCountry} />
                 <input placeholder="City:" type="text" value={this.state.city} name="city" onChange={this.setCity} />
-                <input type="submit" value="Submit" />
+                <input type="submit" value="Submit" disabled={this.state.outputState ===  WeatherOutputState.Searching} />
             </form>
             <WeatherOutput weather={this.state.weather} outputState={this.state.outputState} errorMessage={this.state.errorMessage}/>
         </div>;
