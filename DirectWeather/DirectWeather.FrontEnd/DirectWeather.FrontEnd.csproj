@@ -22,10 +22,18 @@
 
   <ItemGroup>
     <None Remove="ClientApp\components\WeatherOutput.tsx" />
+    <None Remove="ClientApp\css\logo.jpg" />
+    <None Remove="ClientApp\import-img.d.ts" />
+    <None Remove="custom.d.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="ClientApp\css\logo.jpg" />
   </ItemGroup>
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\components\WeatherOutput.tsx" />
+    <TypeScriptCompile Include="ClientApp\import-img.d.ts" />
   </ItemGroup>
 
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">

@@ -6,12 +6,14 @@ export interface LayoutProps {
 
 export class Layout extends React.Component<LayoutProps, {}> {
     public render() {
-        return <div className='container-fluid'>
-            <div className='row'>
-                <div className='col-sm-12'>
-                    { this.props.children }
-                </div>
-            </div>
+        return <div className='container'>
+
+            <header className="App-header">
+                <div className="App-logo" />
+                <h1 className="App-title">Welcome to DirectWeather</h1>
+            </header>
+
+            {this.props.children}
         </div>;
     }
 }

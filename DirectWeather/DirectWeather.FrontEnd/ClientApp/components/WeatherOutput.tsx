@@ -9,6 +9,8 @@ interface WeatherProps {
 }
 
 export class WeatherOutput extends React.Component<WeatherProps, {}> {
+    
+
     render() {
         if (this.props != null) {
             if (this.props.outputState === Home.WeatherOutputState.Visible) {
@@ -24,7 +26,7 @@ export class WeatherOutput extends React.Component<WeatherProps, {}> {
             } else if (this.props.outputState === Home.WeatherOutputState.Searching) {
                 return <div>Searching the forecast...</div>;
             } else if (this.props.outputState === Home.WeatherOutputState.InError) {
-                return <div className="has-error"> {this.props.errorMessage}</div>;
+                return <div className='has-error'> {this.props.errorMessage}</div>;
             } 
         }
 

@@ -2,6 +2,7 @@ import * as React from 'react';
 import { RouteComponentProps } from 'react-router';
 import 'isomorphic-fetch';
 import { WeatherOutput } from "./WeatherOutput";
+import 'bootstrap';
 
 
 interface SearchDataState {
@@ -66,10 +67,10 @@ export class Home extends React.Component<RouteComponentProps<{}>, SearchDataSta
 
                 if (response.status === 500)
                     throw new Error("City or country not found. Please try again.");
-                
+
                 if (response.status === 404)
                     throw new Error("Please fill city and country fields. If the error keep displaying, check if the website http://localhost:5268 is online.");
-                
+
                 throw new Error(response.statusText);
             })
             .then(data => {
@@ -84,12 +85,18 @@ export class Home extends React.Component<RouteComponentProps<{}>, SearchDataSta
 
     public render() {
         return <div>
-            <form onSubmit={this.handleSubmit}>
-                <input placeholder="Country:" type="text" value={this.state.country} name="country" onChange={this.setCountry} />
-                <input placeholder="City:" type="text" value={this.state.city} name="city" onChange={this.setCity} />
-                <input type="submit" value="Submit" disabled={this.state.outputState ===  WeatherOutputState.Searching} />
+            <form onSubmit={this.handleSubmit} >
+                <div className="inputData">
+                    <input placeholder="Enter country" type="text" value={this.state.country} name="country" onChange={this.setCountry} />
+                </div>
+                <div className="inputData">
+                    <input placeholder="Enter city" type="text" value={this.state.city} name="city" onChange={this.setCity} />
+                </div>
+                <div >
+                    <button type="submit" className="btn btn-default" disabled={this.state.outputState === WeatherOutputState.Searching}>Search</button>
+                </div>
             </form>
-            <WeatherOutput weather={this.state.weather} outputState={this.state.outputState} errorMessage={this.state.errorMessage}/>
+            <WeatherOutput weather={this.state.weather} outputState={this.state.outputState} errorMessage={this.state.errorMessage} />
         </div>;
     }
 }
