@@ -7,8 +7,9 @@ import { WeatherOutput } from "./WeatherOutput";
 interface SearchDataState {
     country: string;
     city: string;
-    isVisible : boolean
     weather: Weather;
+    outputState: WeatherOutputState;
+    errorMessage: string;
 }
 
 export class Weather {
@@ -23,10 +24,17 @@ export class Weather {
     }
 }
 
+export enum WeatherOutputState {
+    NotVisible,
+    Visible,
+    InError
+}
+
+
 export class Home extends React.Component<RouteComponentProps<{}>, SearchDataState> {
     constructor(props: any) {
         super(props);
-        this.state = { country: "", city: "", isVisible : false, weather: new Weather() };
+        this.state = { country: "", city: "", weather: new Weather(), outputState: WeatherOutputState.NotVisible, errorMessage: "" };
 
         this.setCountry = this.setCountry.bind(this);
         this.setCity = this.setCity.bind(this);
@@ -47,12 +55,29 @@ export class Home extends React.Component<RouteComponentProps<{}>, SearchDataSta
     }
 
     searchCommand(country: string, city: string) {
-        this.setState({ isVisible: false});
+        this.setState({ outputState: WeatherOutputState.NotVisible });
+        this.setState({ weather: new Weather() });
+
         fetch("http://localhost:5268/api/Weather/" + country + "/" + city)
-            .then(response => response.json() as Promise<Weather>)
+            .then(response => {
+                if (response.status === 200)
+                    return response.json() as Promise<Weather>;
+
+                if (response.status === 500)
+                    throw new Error("City or country not found. Please try again.");
+                
+                if (response.status === 404)
+                    throw new Error("Please fill city and country fields. If error keep displays, check the website http://localhost:5268 is online.");
+                
+                throw new Error(response.statusText);
+            })
             .then(data => {
                 this.setState({ weather: data });
-                this.setState({ isVisible: true });
+                this.setState({ outputState: WeatherOutputState.Visible });
+            })
+            .catch(reason => {
+                this.setState({ outputState: WeatherOutputState.InError });
+                this.setState({ errorMessage: reason.message });
             });
     }
 
@@ -63,7 +88,7 @@ export class Home extends React.Component<RouteComponentProps<{}>, SearchDataSta
                 <input placeholder="City:" type="text" value={this.state.city} name="city" onChange={this.setCity} />
                 <input type="submit" value="Submit" />
             </form>
-            <WeatherOutput weather={this.state.weather} isVisible={this.state.isVisible}/>
+            <WeatherOutput weather={this.state.weather} outputState={this.state.outputState} errorMessage={this.state.errorMessage}/>
         </div>;
     }
 }
