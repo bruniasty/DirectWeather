@@ -28,10 +28,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="ClientApp\css\logo.jpg" />
-  </ItemGroup>
-
-  <ItemGroup>
     <TypeScriptCompile Include="ClientApp\components\WeatherOutput.tsx" />
     <TypeScriptCompile Include="ClientApp\import-img.d.ts" />
   </ItemGroup>

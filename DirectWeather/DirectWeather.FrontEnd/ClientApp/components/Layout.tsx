@@ -6,7 +6,7 @@ export interface LayoutProps {
 
 export class Layout extends React.Component<LayoutProps, {}> {
     public render() {
-        return <div className='container'>
+        return <div>
 
             <header className="App-header">
                 <div className="App-logo" />

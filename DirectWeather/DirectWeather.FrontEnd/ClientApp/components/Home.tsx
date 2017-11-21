@@ -87,13 +87,13 @@ export class Home extends React.Component<RouteComponentProps<{}>, SearchDataSta
         return <div>
             <form onSubmit={this.handleSubmit} >
                 <div className="inputData">
-                    <input placeholder="Enter country" type="text" value={this.state.country} name="country" onChange={this.setCountry} />
+                    <input placeholder="Enter country" type="text" value={this.state.country} name="country" onChange={this.setCountry} required={true}/>
                 </div>
                 <div className="inputData">
-                    <input placeholder="Enter city" type="text" value={this.state.city} name="city" onChange={this.setCity} />
+                    <input placeholder="Enter city" type="text" value={this.state.city} name="city" onChange={this.setCity} required={true}/>
                 </div>
                 <div >
-                    <button type="submit" className="btn btn-default" disabled={this.state.outputState === WeatherOutputState.Searching}>Search</button>
+                    <button type="submit" className="btn btn-default" name="submit" disabled={this.state.outputState === WeatherOutputState.Searching}>Search</button>
                 </div>
             </form>
             <WeatherOutput weather={this.state.weather} outputState={this.state.outputState} errorMessage={this.state.errorMessage} />

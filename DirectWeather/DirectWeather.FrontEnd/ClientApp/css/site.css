@@ -27,14 +27,16 @@ body {
 }
 
 .App-header {
-    height: 150px;
-    padding: 20px;
+    height: 120px;
+    padding: 10px;
     color: white; 
 }
 
 .App-title {
     font-size: 1.5em;
     text-align: center;
+    width: 260px;
+    margin: 0 auto;
 }
 
 .App-intro {

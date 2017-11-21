@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2009
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectWeather.FrontEnd.Tests", "DirectWeather.FrontEnd.Tests\DirectWeather.FrontEnd.Tests.csproj", "{A3116F0F-8D2C-4743-A710-0D27C668AC31}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A3116F0F-8D2C-4743-A710-0D27C668AC31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3116F0F-8D2C-4743-A710-0D27C668AC31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3116F0F-8D2C-4743-A710-0D27C668AC31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3116F0F-8D2C-4743-A710-0D27C668AC31}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6D46E86F-B181-45EF-82FC-88B96F18CDB0}
+	EndGlobalSection
+EndGlobal

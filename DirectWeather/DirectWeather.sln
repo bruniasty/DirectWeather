@@ -7,15 +7,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectWeather.WebAPI", "Dir
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectWeather.WebAPI.Tests", "DirectWeather.WebAPI.Tests\DirectWeather.WebAPI.Tests.csproj", "{C629868E-1071-4F35-A748-10F6610B75D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectWeather.FrontEnd.Tests", "DirectWeather.FrontEnd.Tests\DirectWeather.FrontEnd.Tests.csproj", "{A3116F0F-8D2C-4743-A710-0D27C668AC31}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectWeather.BusinessServices", "DirectWeather.BusinessServices\DirectWeather.BusinessServices.csproj", "{1CCF0B9F-F681-44D2-9B24-52A9F9C8C263}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectWeather.BusinessServices.Tests", "DirectWeather.BusinessServices.Tests\DirectWeather.BusinessServices.Tests.csproj", "{975DE06F-C0E1-42A5-92CC-33ADA7740E75}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectWeather.DTO", "DirectWeather.DTO\DirectWeather.DTO.csproj", "{09A5DEFD-BF6D-460D-992F-7D2CD28CCD0F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectWeather.FrontEnd", "DirectWeather.FrontEnd\DirectWeather.FrontEnd.csproj", "{120CDFEE-CD1F-4F89-A045-2A1EAA793289}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DirectWeather.FrontEnd", "DirectWeather.FrontEnd\DirectWeather.FrontEnd.csproj", "{120CDFEE-CD1F-4F89-A045-2A1EAA793289}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,10 +29,6 @@ Global
 		{C629868E-1071-4F35-A748-10F6610B75D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C629868E-1071-4F35-A748-10F6610B75D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C629868E-1071-4F35-A748-10F6610B75D0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A3116F0F-8D2C-4743-A710-0D27C668AC31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A3116F0F-8D2C-4743-A710-0D27C668AC31}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A3116F0F-8D2C-4743-A710-0D27C668AC31}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A3116F0F-8D2C-4743-A710-0D27C668AC31}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1CCF0B9F-F681-44D2-9B24-52A9F9C8C263}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1CCF0B9F-F681-44D2-9B24-52A9F9C8C263}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CCF0B9F-F681-44D2-9B24-52A9F9C8C263}.Release|Any CPU.ActiveCfg = Release|Any CPU
